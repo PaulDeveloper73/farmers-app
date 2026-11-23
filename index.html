@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Primary SEO / application metadata -->
+  <title>Bukomansimbi Farmer &amp; Contact Management System</title>
+  <meta name="description"
+    content="Bukomansimbi Farmer and Contact Management System — manage farmer records, match contact information, monitor data quality, and access farmer management reports." />
+  <meta name="author" content="Kisakye Paul" />
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="googlebot" content="noindex, nofollow" />
+  <meta name="theme-color" content="#10265b" />
+  <meta name="application-name" content="Bukomansimbi Farmers Database" />
+
+  <!-- Open Graph / social sharing metadata -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Bukomansimbi Farmer Management System" />
+  <meta property="og:title" content="Bukomansimbi Farmer &amp; Contact Management System" />
+  <meta property="og:description"
+    content="Manage farmer records, contact matching, data quality, and agricultural information in one place." />
+  <meta property="og:locale" content="en_UG" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Bukomansimbi Farmer &amp; Contact Management System" />
+  <meta name="twitter:description" content="Manage. Match. Engage. Grow Together." />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="./assets/bukomansimbi-leaf.png" />
+  <link rel="apple-touch-icon" href="./assets/bukomansimbi-leaf.png" />
+
+  <!-- Performance and typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet" />
+
+  <!-- Dashboard styles -->
+  <link rel="stylesheet" href="./assets/css/style.css" />
+</head>
+
+<body class="app-body">
+  <!-- Inline SVG icon set: no JavaScript or icon library required. -->
+  <svg class="svg-sprite" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <symbol id="i-home" viewBox="0 0 24 24">
+      <path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1z" />
+      <path d="M2 10 12 2l10 8" />
+    </symbol>
+    <symbol id="i-users" viewBox="0 0 24 24">
+      <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+      <circle cx="9" cy="7" r="4" />
+      <path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" />
+    </symbol>
+    <symbol id="i-contact" viewBox="0 0 24 24">
+      <rect x="3" y="4" width="18" height="16" rx="2" />
+      <circle cx="9" cy="10" r="2.5" />
+      <path d="M5.5 17c.8-2 2-3 3.5-3s2.7 1 3.5 3M15 9h3M15 13h3M15 17h2" />
+    </symbol>
+    <symbol id="i-check-square" viewBox="0 0 24 24">
+      <rect x="3" y="3" width="18" height="18" rx="3" />
+      <path d="m7 12 3 3 7-7" />
+    </symbol>
+    <symbol id="i-chart" viewBox="0 0 24 24">
+      <path d="M3 3v18h18" />
+      <path d="m7 14 4-4 3 3 6-7" />
+      <path d="M7 18v-4M11 18v-8M15 18v-5M19 18V6" />
+    </symbol>
+    <symbol id="i-export" viewBox="0 0 24 24">
+      <path d="M12 16V3m-5 5 5-5 5 5" />
+      <path d="M5 13v6a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-6" />
+    </symbol>
+    <symbol id="i-settings" viewBox="0 0 24 24">
+      <circle cx="12" cy="12" r="3" />
+      <path
+        d="m19.4 15 .1.1 1.4 1.1-1.4 2.4-1.7-.6a8 8 0 0 1-1.6.9l-.3 1.8h-2.8l-.3-1.8a8 8 0 0 1-1.6-.9l-1.7.6-1.4-2.4 1.4-1.1a7 7 0 0 1 0-1.9l-1.4-1.1 1.4-2.4 1.7.6a8 8 0 0 1 1.6-.9l.3-1.8h2.8l.3 1.8a8 8 0 0 1 1.6.9l1.7-.6 1.4 2.4-1.4 1.1a7 7 0 0 1 0 1.9Z"
+        transform="translate(-1 -1)" />
+    </symbol>
+    <symbol id="i-help" viewBox="0 0 24 24">
+      <circle cx="12" cy="12" r="9" />
+      <path d="M9.6 9a2.5 2.5 0 1 1 4.5 1.5c-.8 1-2.1 1.3-2.1 3M12 17.5h.01" />
+    </symbol>
+    <symbol id="i-search" viewBox="0 0 24 24">
+      <circle cx="10.8" cy="10.8" r="6.8" />
+      <path d="m16 16 5 5" />
+    </symbol>
+    <symbol id="i-plus" viewBox="0 0 24 24">
+      <path d="M12 5v14M5 12h14" />
+    </symbol>
+    <symbol id="i-upload" viewBox="0 0 24 24">
+      <path d="M12 16V4m-5 5 5-5 5 5" />
+      <path d="M4 16v4h16v-4" />
+    </symbol>
+    <symbol id="i-download" viewBox="0 0 24 24">
+      <path d="M12 4v12m-5-5 5 5 5-5" />
+      <path d="M4 18v2h16v-2" />
+    </symbol>
+    <symbol id="i-calendar" viewBox="0 0 24 24">
+      <rect x="3" y="5" width="18" height="16" rx="2" />
+      <path d="M16 3v4M8 3v4M3 10h18" />
+    </symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24">
+      <circle cx="12" cy="12" r="9" />
+      <path d="M12 7v5l3 2" />
+    </symbol>
+    <symbol id="i-bell" viewBox="0 0 24 24">
+      <path d="M18 9a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9M10 21h4" />
+    </symbol>
+    <symbol id="i-sun" viewBox="0 0 24 24">
+      <circle cx="12" cy="12" r="4" />
+      <path d="M12 2v2m0 16v2M4.9 4.9l1.4 1.4m11.4 11.4 1.4 1.4M2 12h2m16 0h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4" />
+    </symbol>
+    <symbol id="i-chevron" viewBox="0 0 24 24">
+      <path d="m6 9 6 6 6-6" />
+    </symbol>
+    <symbol id="i-arrow-right" viewBox="0 0 24 24">
+      <path d="M4 12h15m-6-6 6 6-6 6" />
+    </symbol>
+    <symbol id="i-eye" viewBox="0 0 24 24">
+      <path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12Z" />
+      <circle cx="12" cy="12" r="3" />
+    </symbol>
+    <symbol id="i-edit" viewBox="0 0 24 24">
+      <path d="m4 16.5-.8 4.3 4.3-.8L19 8.5 15.5 5 4 16.5Z" />
+      <path d="m13.8 6.7 3.5 3.5M3 21h18" />
+    </symbol>
+    <symbol id="i-trash" viewBox="0 0 24 24">
+      <path d="M4 7h16M10 11v6m4-6v6M6 7l1 14h10l1-14M9 7V4h6v3" />
+    </symbol>
+    <symbol id="i-filter" viewBox="0 0 24 24">
+      <path d="M3 5h18l-7 8v5l-4 2v-7L3 5Z" />
+    </symbol>
+    <symbol id="i-alert" viewBox="0 0 24 24">
+      <path d="M10.3 3.9 2.7 17a2 2 0 0 0 1.7 3h15.2a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0Z" />
+      <path d="M12 9v4m0 3h.01" />
+    </symbol>
+    <symbol id="i-check-circle" viewBox="0 0 24 24">
+      <circle cx="12" cy="12" r="9" />
+      <path d="m8 12 2.5 2.5L16 9" />
+    </symbol>
+    <symbol id="i-info" viewBox="0 0 24 24">
+      <circle cx="12" cy="12" r="9" />
+      <path d="M12 11v5m0-8h.01" />
+    </symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24">
+      <path
+        d="M21 16.5v3a2 2 0 0 1-2.2 2A19 19 0 0 1 3.5 6.2 2 2 0 0 1 5.5 4h3a2 2 0 0 1 2 1.7l.5 2.8a2 2 0 0 1-.6 1.8L9 11.7a15 15 0 0 0 3.3 3.3l1.4-1.4a2 2 0 0 1 1.8-.6l2.8.5a2 2 0 0 1 1.7 2Z" />
+    </symbol>
+    <symbol id="i-leaf" viewBox="0 0 24 24">
+      <path d="M20.5 3.5C11 3.5 5 6.2 5 13a6 6 0 0 0 6 6c6.8 0 9.5-6 9.5-15.5Z" />
+      <path d="M3 21c3.5-6 7-9 13-13" />
+    </symbol>
+  </svg>
+
+  <div class="app-shell">
+    <!-- Left navigation -->
+    <aside class="sidebar" aria-label="Main navigation">
+      <a class="sidebar-brand" href="#dashboard" aria-label="Bukomansimbi Farmers Database home">
+        <img class="sidebar-brand__leaf" src="./assets/bukomansimbi-leaf.png" alt="" />
+        <span class="sidebar-brand__name">Bukomansimbi</span>
+        <span class="sidebar-brand__sub">Farmers Database</span>
+      </a>
+
+      <nav class="side-nav" aria-label="Dashboard sections">
+        <a class="side-nav__link is-active" href="#dashboard" aria-current="page"><svg>
+            <use href="#i-home" />
+          </svg><span>Dashboard</span></a>
+        <a class="side-nav__link" href="#farmers"><svg>
+            <use href="#i-users" />
+          </svg><span>Manage Farmers</span></a>
+        <a class="side-nav__link" href="#contacts"><svg>
+            <use href="#i-contact" />
+          </svg><span>Contacts &amp; Matching</span></a>
+        <a class="side-nav__link" href="#data-quality"><svg>
+            <use href="#i-check-square" />
+          </svg><span>Data Quality</span></a>
+        <a class="side-nav__link" href="#reports"><svg>
+            <use href="#i-chart" />
+          </svg><span>Reports &amp; Analytics</span></a>
+        <a class="side-nav__link" href="#export"><svg>
+            <use href="#i-export" />
+          </svg><span>Export Data</span></a>
+        <a class="side-nav__link" href="#settings"><svg>
+            <use href="#i-settings" />
+          </svg><span>Settings</span></a>
+        <a class="side-nav__link" href="#support"><svg>
+            <use href="#i-help" />
+          </svg><span>Help &amp; Support</span></a>
+      </nav>
+
+      <article class="sidebar-promo" aria-label="Farmer empowerment message">
+        <img src="./assets/sidebar-seedling.jpg" alt="Young green seedling growing in healthy soil" />
+        <div class="sidebar-promo__shade"></div>
+        <div class="sidebar-promo__copy">
+          <strong>Empowering<br />Our Farmers</strong>
+          <span>for a Prosperous<br />Bukomansimbi</span>
+        </div>
+      </article>
+
+      <div class="sidebar-account">
+        <div class="account-avatar" aria-hidden="true">KP</div>
+        <div class="sidebar-account__details"><strong>Kisakye Paul</strong><span>Administrator</span></div>
+        <svg class="account-chevron">
+          <use href="#i-chevron" />
+        </svg>
+      </div>
+      <button class="logout-button" type="button" data-action="logout">Logout</button>
+    </aside>
+
+    <!-- Main dashboard -->
+    <div class="main-area" id="dashboard">
+      <header class="topbar">
+        <div class="topbar__landscape" aria-hidden="true"></div>
+        <div class="topbar-brand">
+          <img src="./assets/bukomansimbi-leaf.png" alt="" class="topbar-brand__leaf" />
+          <div class="topbar-brand__text">
+            <h1>Bukomansimbi</h1>
+            <p>Farmer &amp; Contact Management System</p>
+            <span>Manage &bull; Match &bull; Engage &bull; Grow Together</span>
+          </div>
+        </div>
+
+        <div class="topbar-tools" aria-label="System controls">
+          <div class="topbar-tool topbar-tool--date"><svg>
+              <use href="#i-calendar" />
+            </svg><span id="current-date">Wed, Nov 12, 2025</span></div>
+          <div class="topbar-tool"><svg>
+              <use href="#i-clock" />
+            </svg><span id="current-time">09:45 AM</span></div>
+          <button class="theme-toggle" type="button" aria-label="Toggle theme"
+            data-action="toggle-theme"><span></span></button>
+          <button class="notification-button" type="button" aria-label="Notifications" data-action="notifications"><svg>
+              <use href="#i-bell" />
+            </svg><i>3</i></button>
+        </div>
+      </header>
+
+      <main class="dashboard-content">
+        <!-- KPI summary cards -->
+        <section class="stats-grid" aria-label="Farmer database summary">
+          <article class="stat-card stat-card--blue">
+            <div class="stat-card__icon"><svg>
+                <use href="#i-users" />
+              </svg></div>
+            <div class="stat-card__content"><strong>500</strong><span>Total Farmers</span><small class="stat-positive">↑
+                +2%</small></div>
+            <a href="#farmers" class="stat-card__link">View Details <svg>
+                <use href="#i-arrow-right" />
+              </svg></a>
+            <span class="stat-card__wave" aria-hidden="true"></span>
+          </article>
+          <article class="stat-card stat-card--green">
+            <div class="stat-card__icon"><svg>
+                <use href="#i-phone" />
+              </svg></div>
+            <div class="stat-card__content"><strong>457</strong><span>Contacts Found</span><small
+                class="stat-positive">↑ +91%</small></div>
+            <a href="#contacts" class="stat-card__link">View Details <svg>
+                <use href="#i-arrow-right" />
+              </svg></a>
+            <span class="stat-card__wave" aria-hidden="true"></span>
+          </article>
+          <article class="stat-card stat-card--orange">
+            <div class="stat-card__icon"><svg>
+                <use href="#i-alert" />
+              </svg></div>
+            <div class="stat-card__content"><strong>43</strong><span>Needs Review</span><small class="stat-negative">↓
+                -9%</small></div>
+            <a href="#contacts" class="stat-card__link">View Details <svg>
+                <use href="#i-arrow-right" />
+              </svg></a>
+            <span class="stat-card__wave" aria-hidden="true"></span>
+          </article>
+          <article class="stat-card stat-card--purple">
+            <div class="stat-card__icon"><svg>
+                <use href="#i-check-circle" />
+              </svg></div>
+            <div class="stat-card__content"><strong>1</strong><span>Not Found</span><small class="stat-negative">↓
+                -0.2%</small></div>
+            <a href="#contacts" class="stat-card__link">View Details <svg>
+                <use href="#i-arrow-right" />
+              </svg></a>
+            <span class="stat-card__wave" aria-hidden="true"></span>
+          </article>
+        </section>
+
+        <div class="workspace-grid">
+          <div class="primary-column">
+            <!-- Data overview and charts -->
+            <section class="panel overview-panel" id="reports" aria-labelledby="overview-title">
+              <div class="panel-heading overview-heading">
+                <h2 id="overview-title"><span class="heading-icon heading-icon--blue"><svg>
+                      <use href="#i-chart" />
+                    </svg></span>Data Overview</h2>
+                <div class="overview-filters">
+                  <label class="sr-only" for="district-filter">Filter by district</label>
+                  <select id="district-filter" data-filter="district">
+                    <option>All Districts</option>
+                    <option>Bukomansimbi</option>
+                    <option>Logino</option>
+                  </select>
+                  <label class="sr-only" for="period-filter">Filter by period</label>
+                  <select id="period-filter" data-filter="period">
+                    <option>This Year</option>
+                    <option>This Month</option>
+                    <option>Last 30 Days</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="overview-body">
+                <div class="quality-summary">
+                  <div class="donut-chart" role="img"
+                    aria-label="500 total farmer records: 91.4 percent contacts found, 8.4 percent needs review, and 0.2 percent not found.">
+                    <div class="donut-chart__center"><strong>500</strong><span>Total</span></div>
+                  </div>
+                  <div class="chart-legend">
+                    <div class="legend-item"><i class="legend-dot legend-dot--blue"></i><span>Contacts Found<strong>457
+                          (91.4%)</strong></span></div>
+                    <div class="legend-item"><i class="legend-dot legend-dot--orange"></i><span>Needs Review<strong>42
+                          (8.4%)</strong></span></div>
+                    <div class="legend-item"><i class="legend-dot legend-dot--purple"></i><span>Not Found<strong>1
+                          (0.2%)</strong></span></div>
+                  </div>
+                </div>
+
+                <div class="trend-panel">
+                  <h3>Records Trend</h3>
+                  <div class="trend-chart-wrap">
+                    <svg class="trend-chart" viewBox="0 0 430 166" role="img"
+                      aria-label="Records trend: July 320, August 355, September 390, October 430, November 500.">
+                      <defs>
+                        <linearGradient id="trendFill" x1="0" x2="0" y1="0" y2="1">
+                          <stop offset="0" stop-color="#2371ef" stop-opacity=".22" />
+                          <stop offset="1" stop-color="#2371ef" stop-opacity=".015" />
+                        </linearGradient>
+                      </defs>
+                      <g class="chart-grid-lines">
+                        <path d="M42 18H420M42 45H420M42 72H420M42 99H420M42 126H420" />
+                        <path d="M42 18V126M136 18V126M230 18V126M324 18V126M420 18V126" />
+                      </g>
+                      <g class="chart-axis-labels"><text x="8" y="22">500</text><text x="8" y="49">400</text><text x="8"
+                          y="76">300</text><text x="8" y="103">200</text><text x="8" y="130">100</text><text x="28"
+                          y="153">0</text></g>
+                      <path class="trend-area" d="M42 84 L136 74 L230 63 L324 51 L420 28 L420 126 L42 126Z" />
+                      <path class="trend-line" d="M42 84 L136 74 L230 63 L324 51 L420 28" />
+                      <g class="trend-points">
+                        <circle cx="42" cy="84" r="4.7" />
+                        <circle cx="136" cy="74" r="4.7" />
+                        <circle cx="230" cy="63" r="4.7" />
+                        <circle cx="324" cy="51" r="4.7" />
+                        <circle cx="420" cy="28" r="5.2" />
+                      </g>
+                      <g class="trend-values"><text x="42" y="73">320</text><text x="136" y="63">355</text><text x="230"
+                          y="52">390</text><text x="324" y="40">430</text><text x="420" y="17">500</text></g>
+                      <g class="trend-months"><text x="42" y="164">Jul</text><text x="136" y="164">Aug</text><text
+                          x="230" y="164">Sep</text><text x="324" y="164">Oct</text><text x="420" y="164">Nov</text></g>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <!-- Main actions -->
+            <section class="action-toolbar" aria-label="Farmer database actions">
+              <button class="action-button action-button--purple" type="button" data-action="search-farmers"><svg>
+                  <use href="#i-search" />
+                </svg><span>Search Farmers</span></button>
+              <button class="action-button action-button--blue" type="button" data-action="add-farmer"><svg>
+                  <use href="#i-plus" />
+                </svg><span>Add Farmer</span></button>
+              <button class="action-button action-button--green" type="button" data-action="import-excel"><svg>
+                  <use href="#i-upload" />
+                </svg><span>Import Excel</span></button>
+              <button class="action-button action-button--violet" type="button" data-action="export-data"><svg>
+                  <use href="#i-download" />
+                </svg><span>Export Data</span></button>
+              <button class="action-button action-button--teal" type="button" data-action="view-reports"><svg>
+                  <use href="#i-chart" />
+                </svg><span>View Reports</span></button>
+            </section>
+
+            <!-- Farmer records table -->
+            <section class="panel farmers-panel" id="farmers" aria-labelledby="farmers-title">
+              <div class="farmers-heading">
+                <h2 id="farmers-title"><span class="heading-icon heading-icon--navy"><svg>
+                      <use href="#i-users" />
+                    </svg></span>Farmers List <span class="record-count">(500 Records)</span></h2>
+                <form class="table-search" role="search" data-form="farmer-search">
+                  <label class="sr-only" for="farmer-search-input">Search farmers by name, phone or location</label>
+                  <input id="farmer-search-input" type="search" placeholder="Search by name, phone or location..." />
+                  <button type="submit" aria-label="Search farmers"><svg>
+                      <use href="#i-search" />
+                    </svg></button>
+                </form>
+              </div>
+
+              <div class="table-scroll custom-scrollbar">
+                <table class="farmers-table">
+                  <thead>
+                    <tr>
+                      <th scope="col">#</th>
+                      <th scope="col">Farmer Name</th>
+                      <th scope="col">Location</th>
+                      <th scope="col">Gender</th>
+                      <th scope="col">Farm Size</th>
+                      <th scope="col">Trees</th>
+                      <th scope="col">Contact</th>
+                      <th scope="col">Status</th>
+                      <th scope="col">Actions</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>1</td>
+                      <td class="farmer-name">Nabantazi Grace</td>
+                      <td>Bukomansimbi</td>
+                      <td>Female</td>
+                      <td>1.0</td>
+                      <td>50</td>
+                      <td>0772456789</td>
+                      <td><span class="status status--matched"><svg>
+                            <use href="#i-check-circle" />
+                          </svg>Matched</span></td>
+                      <td>
+                        <div class="row-actions"><button type="button" aria-label="View Nabantazi Grace"
+                            data-action="view-farmer" data-id="1"><svg>
+                              <use href="#i-eye" />
+                            </svg></button><button type="button" aria-label="Edit Nabantazi Grace"
+                            data-action="edit-farmer" data-id="1"><svg>
+                              <use href="#i-edit" />
+                            </svg></button><button type="button" aria-label="Delete Nabantazi Grace"
+                            data-action="delete-farmer" data-id="1"><svg>
+                              <use href="#i-trash" />
+                            </svg></button></div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>2</td>
+                      <td class="farmer-name">Kato Joseph</td>
+                      <td>Logino</td>
+                      <td>Male</td>
+                      <td>2.0</td>
+                      <td>120</td>
+                      <td>0701122334</td>
+                      <td><span class="status status--matched"><svg>
+                            <use href="#i-check-circle" />
+                          </svg>Matched</span></td>
+                      <td>
+                        <div class="row-actions"><button type="button" aria-label="View Kato Joseph"
+                            data-action="view-farmer" data-id="2"><svg>
+                              <use href="#i-eye" />
+                            </svg></button><button type="button" aria-label="Edit Kato Joseph" data-action="edit-farmer"
+                            data-id="2"><svg>
+                              <use href="#i-edit" />
+                            </svg></button><button type="button" aria-label="Delete Kato Joseph"
+                            data-action="delete-farmer" data-id="2"><svg>
+                              <use href="#i-trash" />
+                            </svg></button></div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>3</td>
+                      <td class="farmer-name">Nakalema Maria</td>
+                      <td>Bukomansimbi</td>
+                      <td>Female</td>
+                      <td>0.5</td>
+                      <td>30</td>
+                      <td>0788765432</td>
+                      <td><span class="status status--review"><svg>
+                            <use href="#i-alert" />
+                          </svg>Review</span></td>
+                      <td>
+                        <div class="row-actions"><button type="button" aria-label="View Nakalema Maria"
+                            data-action="view-farmer" data-id="3"><svg>
+                              <use href="#i-eye" />
+                            </svg></button><button type="button" aria-label="Edit Nakalema Maria"
+                            data-action="edit-farmer" data-id="3"><svg>
+                              <use href="#i-edit" />
+                            </svg></button><button type="button" aria-label="Delete Nakalema Maria"
+                            data-action="delete-farmer" data-id="3"><svg>
+                              <use href="#i-trash" />
+                            </svg></button></div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>4</td>
+                      <td class="farmer-name">Ssemanda David</td>
+                      <td>Bukomansimbi</td>
+                      <td>Male</td>
+                      <td>1.5</td>
+                      <td>80</td>
+                      <td class="muted-cell">—</td>
+                      <td><span class="status status--missing"><svg>
+                            <use href="#i-alert" />
+                          </svg>Missing</span></td>
+                      <td>
+                        <div class="row-actions"><button type="button" aria-label="View Ssemanda David"
+                            data-action="view-farmer" data-id="4"><svg>
+                              <use href="#i-eye" />
+                            </svg></button><button type="button" aria-label="Edit Ssemanda David"
+                            data-action="edit-farmer" data-id="4"><svg>
+                              <use href="#i-edit" />
+                            </svg></button><button type="button" aria-label="Delete Ssemanda David"
+                            data-action="delete-farmer" data-id="4"><svg>
+                              <use href="#i-trash" />
+                            </svg></button></div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>5</td>
+                      <td class="farmer-name">Nsubuga Peter</td>
+                      <td>Logino</td>
+                      <td>Male</td>
+                      <td>1.0</td>
+                      <td>60</td>
+                      <td>0719988776</td>
+                      <td><span class="status status--matched"><svg>
+                            <use href="#i-check-circle" />
+                          </svg>Matched</span></td>
+                      <td>
+                        <div class="row-actions"><button type="button" aria-label="View Nsubuga Peter"
+                            data-action="view-farmer" data-id="5"><svg>
+                              <use href="#i-eye" />
+                            </svg></button><button type="button" aria-label="Edit Nsubuga Peter"
+                            data-action="edit-farmer" data-id="5"><svg>
+                              <use href="#i-edit" />
+                            </svg></button><button type="button" aria-label="Delete Nsubuga Peter"
+                            data-action="delete-farmer" data-id="5"><svg>
+                              <use href="#i-trash" />
+                            </svg></button></div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <div class="table-footer">
+                <span>Showing 1 – 5 of 500 records</span>
+                <nav class="pagination" aria-label="Farmer records pages">
+                  <button type="button" aria-label="First page" data-page="first">«</button>
+                  <button type="button" aria-label="Previous page" data-page="previous">‹</button>
+                  <button type="button" class="is-current" aria-current="page" data-page="1">1</button>
+                  <button type="button" data-page="2">2</button>
+                  <button type="button" data-page="3">3</button>
+                  <button type="button" data-page="4">4</button>
+                  <button type="button" data-page="5">5</button>
+                  <button type="button" aria-label="Next page" data-page="next">»</button>
+                  <button type="button" aria-label="Last page" data-page="last">»</button>
+                </nav>
+              </div>
+            </section>
+          </div>
+
+          <!-- Right column: actionable information -->
+          <aside class="right-column" aria-label="System insights and filters">
+            <section class="panel alerts-panel" aria-labelledby="alerts-title">
+              <div class="panel-heading compact-heading">
+                <h2 id="alerts-title"><span class="alert-heading-icon"><svg>
+                      <use href="#i-alert" />
+                    </svg></span>System Alerts</h2>
+                <a href="#alerts" class="text-link">View All <svg>
+                    <use href="#i-arrow-right" />
+                  </svg></a>
+              </div>
+              <div class="alert-row">
+                <span class="alert-badge alert-badge--red"><svg>
+                    <use href="#i-alert" />
+                  </svg></span>
+                <div><strong>1 record not found in <em>LONGINO</em></strong><span>Check name spelling or source
+                    data.</span></div>
+                <time>2h ago</time>
+              </div>
+              <div class="alert-row">
+                <span class="alert-badge alert-badge--orange">!</span>
+                <div><strong>42 records need contact review</strong><span>Verify phone numbers.</span></div>
+                <time>3h ago</time>
+              </div>
+              <div class="alert-row">
+                <span class="alert-badge alert-badge--blue"><svg>
+                    <use href="#i-info" />
+                  </svg></span>
+                <div><strong>Data backup completed</strong><span>Your data is safely saved.</span></div>
+                <time>5h ago</time>
+              </div>
+            </section>
+
+            <section class="panel quick-filters-panel" aria-labelledby="quick-filters-title">
+              <h2 id="quick-filters-title"><span class="filter-heading-icon"><svg>
+                    <use href="#i-filter" />
+                  </svg></span>Quick Filters</h2>
+              <div class="quick-filter-controls">
+                <label class="sr-only" for="location-quick-filter">Filter by location</label>
+                <select id="location-quick-filter" data-filter="location">
+                  <option>All Locations</option>
+                  <option>Bukomansimbi</option>
+                  <option>Logino</option>
+                </select>
+                <label class="sr-only" for="gender-quick-filter">Filter by gender</label>
+                <select id="gender-quick-filter" data-filter="gender">
+                  <option>All Genders</option>
+                  <option>Female</option>
+                  <option>Male</option>
+                </select>
+                <label class="sr-only" for="status-quick-filter">Filter by status</label>
+                <select id="status-quick-filter" data-filter="status">
+                  <option>All Statuses</option>
+                  <option>Matched</option>
+                  <option>Review</option>
+                  <option>Missing</option>
+                </select>
+              </div>
+            </section>
+
+            <section class="panel data-quality-panel" id="data-quality" aria-labelledby="data-quality-title">
+              <h2 id="data-quality-title"><span class="quality-heading-icon"><svg>
+                    <use href="#i-check-circle" />
+                  </svg></span>Data Quality</h2>
+              <div class="data-quality-body">
+                <div class="quality-ring" role="img" aria-label="91.4 percent complete"><span>91.4%</span></div>
+                <div class="quality-key">
+                  <div><i class="legend-dot legend-dot--teal"></i><span>Complete</span><strong>457</strong></div>
+                  <div><i class="legend-dot legend-dot--orange"></i><span>Needs Review</span><strong>42</strong></div>
+                  <div><i class="legend-dot legend-dot--purple"></i><span>Missing</span><strong>1</strong></div>
+                </div>
+              </div>
+              <div class="quality-success"><svg>
+                  <use href="#i-check-circle" />
+                </svg>Data quality is good!</div>
+            </section>
+
+            <a class="impact-promo" href="#farmer-programmes" aria-label="Learn about farmer programmes">
+              <img src="./assets/farmer-promo.jpg" alt="Farmer using a mobile device in a green field" />
+              <span class="impact-promo__copy"><strong>Better Data.<br />Greater Impact.</strong><b>Get Started <svg>
+                    <use href="#i-arrow-right" />
+                  </svg></b></span>
+            </a>
+          </aside>
+        </div>
+      </main>
+
+      <footer class="main-footer">
+        <p>© 2025 <strong>Bukomansimbi Farmer Management System.</strong></p>
+        <span class="footer-divider"></span>
+        <p>Developed by <strong class="developer-name">Kisakye Paul – Software Developer</strong></p>
+        <div class="footer-spacer"></div>
+        <span class="version-label">Version 1.0.0</span>
+        <span class="footer-divider"></span>
+        <nav class="footer-links" aria-label="Legal and support links"><a href="#privacy">Privacy</a><a
+            href="#terms">Terms</a><a href="#support">Support</a></nav>
+        <div class="social-links" aria-label="Social links">
+          <a href="#facebook" aria-label="Facebook" class="social social--facebook">f</a>
+          <a href="#youtube" aria-label="YouTube" class="social social--youtube">▶</a>
+          <a href="#whatsapp" aria-label="WhatsApp" class="social social--whatsapp">◔</a>
+        </div>
+      </footer>
+    </div>
+  </div>
+</body>
+
+</html>
